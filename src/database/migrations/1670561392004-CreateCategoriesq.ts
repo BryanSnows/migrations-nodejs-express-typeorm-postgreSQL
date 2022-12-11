@@ -5,7 +5,7 @@ export class CreateCategoriesq1670561392004 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "categories",
+                name: "category",
                 columns: [
                     {
                         name: "id",
@@ -26,7 +26,6 @@ export class CreateCategoriesq1670561392004 implements MigrationInterface {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
-                      
                     }
                 ]
             })

@@ -9,12 +9,14 @@ const AppDataSource = new DataSource({
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
     entities: [
-        // ....
+        process.env.TYPEORM_ENTITIES,
+        process.env.TYPEORM_ENTITIES_DIR,
     ],
     migrations: [
         process.env.TYPEORM_MIGRATIONS, 
         process.env.TYPEORM_MIGRATIONS_DIR
     ],
+    synchronize: false
 })
 
 export default AppDataSource
