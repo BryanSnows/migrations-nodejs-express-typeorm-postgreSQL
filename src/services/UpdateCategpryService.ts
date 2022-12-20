@@ -13,7 +13,7 @@ export class UpdateCategoryService {
     async execute({id, name, description}: CategoryUpdateRequest) {
        const repository = AppDataSource.getRepository(Category);
 
-       const category = await repository.findOne(id);
+       const category = await repository.findOneBy({id});
        if (!category) {
             return new Error("category does not exists");
        }

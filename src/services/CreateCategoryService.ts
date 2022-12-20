@@ -11,9 +11,9 @@ export class CreateCategoryService {
     async execute({ name, description}: CategoryRequest): Promise<Category | Error>{
         const repo = AppDataSource.getRepository(Category)
 
-       /* if (await repo.findOne({name})) {
+        if (await repo.findOneBy({name})) {
             return new Error("Category already exists");
-        }*/
+        }
 
         const category = repo.create({
             name,
